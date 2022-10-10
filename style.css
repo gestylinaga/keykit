@@ -111,6 +111,16 @@ a:hover {
   color: var(--blue);
 }
 
+@media (max-width: 600px) {
+  body {
+    height: 100%;
+  }
+
+  .kit {
+    flex-direction: column;
+  }
+}
+
 /* TODO:
   - animate header
   - add small screen reactivity
