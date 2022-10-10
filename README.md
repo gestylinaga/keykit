@@ -23,7 +23,10 @@ Click the Buttons.
 ## Preview
 ![Screenshot](./screenshot.png)
 
---- 
 [Link to Live Site](https://gestylinaga.github.io/keykit/)
 
-Inspired by: [k4](https://github.com/kanhadharmikk/k4)
+---
+
+Inspired by: 
+- [k4](https://github.com/kanhadharmikk/k4)
+- and [this youtube series](https://youtu.be/dZ4HGqRqZVA)
