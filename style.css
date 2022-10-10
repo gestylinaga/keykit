@@ -4,8 +4,8 @@
   --bg: #24283b;
   --text: #c0caf5;
   --red: #f7768e;
-  --blue: #7aa2f7;
   --green: #9ece6a;
+  --blue: #7aa2f7;
   --black: #1a1b26;
 }
 
@@ -62,31 +62,26 @@ h1 { /* Header */
   background-position: center;
   background-size: cover;
 }
-
 .d {
   background: url(./icons/hihatOpen.png);
   background-position: center;
   background-size: cover;
 }
-
 .f {
   background: url(./icons/hihatClosed.png);
   background-position: center;
   background-size: cover;
 }
-
 .j {
   background: url(./icons/kick.png);
   background-position: center;
   background-size: cover;
 }
-
 .k {
   background: url(./icons/snare.png);
   background-position: center;
   background-size: cover;
 }
-
 .l {
   background: url(./icons/floorTom.png);
   background-position: center;
@@ -120,11 +115,5 @@ a:hover {
     flex-direction: column;
   }
 }
-
-/* TODO:
-  - animate header
-  - add small screen reactivity
-  - add volume slider
-*/
 
 /* KeyKit by Gesty Linaga*/
