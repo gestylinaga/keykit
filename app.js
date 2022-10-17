@@ -34,16 +34,19 @@ function playSound(key) {
   switch (key) {
     case "s":
       let ride = new Audio("./sounds/ride.wav");
+      ride.volume = 0.5;
       ride.play();
       break;
 
     case "d":
       let hihatOpen = new Audio("./sounds/hihatOpen.wav");
+      hihatOpen.volume = 0.5;
       hihatOpen.play();
       break;
 
     case "f":
       let hihatClosed = new Audio("./sounds/hihatClosed.wav");
+      hihatClosed.volume = 0.5;
       hihatClosed.play();
       break;
 
@@ -97,7 +100,6 @@ function animateButton(key) {
 
 /* TODO:
   - fix animations when multiple keys hit/hit fast
-  - add volume slider
 */
 
 // KeyKit by Gesty Linaga
