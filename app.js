@@ -1,9 +1,9 @@
-const asciiSig = `
+console.log(`
  _____ _____ __ __ _                 _      _   by: Gesty   _____ _____ _____ 
 |  |  |   __|  |  | |_ ___ ___ ___ _| |   _| |___ _ _ _____|  |  |     |_   _|
 |    -|   __|_   _| . | . | .'|  _| . |  | . |  _| | |     |    -|-   -| | |  
-|__|__|_____| |_| |___|___|__,|_| |___|  |___|_| |___|_|_|_|__|__|_____| |_|  `;
-console.log(asciiSig); // Turn your keyboard into a mini drum kit!
+|__|__|_____| |_| |___|___|__,|_| |___|  |___|_| |___|_|_|_|__|__|_____| |_|  `);
+// Turn your keyboard into a mini drum kit!
 
 // Declare DOM elements - drum buttons:
 const drums = document.querySelectorAll(".drum");
@@ -98,7 +98,6 @@ function animateButton(key) {
 /* TODO:
   - fix animations when multiple keys hit/hit fast
   - add volume slider
-  - animate title?
 */
 
 // KeyKit by Gesty Linaga
