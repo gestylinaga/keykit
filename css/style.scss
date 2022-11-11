@@ -1,0 +1,135 @@
+// KeyKit by: gesty 🏄 
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+// Colors
+$bg: #24283b;
+$text: #c0caf5;
+$red: #f7768e;
+$green: #9ece6a;
+$blue: #7aa2f7;
+$black: #1a1b26;
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: $bg;
+  color: $text;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+h1 {
+  font-size: 4rem;
+  text-shadow: 10px 10px 0 $black;
+  font-family: 'Gochi Hand', cursive;
+  &:hover {
+    color: $blue;
+    animation: color-rotate 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    cursor: default;
+  }
+}
+
+// Button Container Div
+.kit {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+
+// Drum Buttons
+.drum {
+  width: 150px;
+  height: 150px;
+  border: 2px solid $black;
+  color: $red;
+  font-size: 3rem;
+  box-shadow: 0 5px 5px 0 $black;
+  &:hover {
+    cursor: pointer;
+    color: $blue;
+  }
+}
+
+// on keypress/button press
+.pressed {
+  box-shadow: 0 5px 5px 0 $green;
+  opacity: 0.5;
+}
+
+/* Drum Buttons: */
+@mixin bg-opts {
+  background-position: center;
+  background-size: cover;
+}
+.s {
+  background: url(../icons/rideOrCrash.png);
+  @include bg-opts;
+}
+.d {
+  background: url(../icons/hihatOpen.png);
+  @include bg-opts;
+}
+.f {
+  background: url(../icons/hihatClosed.png);
+  @include bg-opts;
+}
+.j {
+  background: url(../icons/kick.png);
+  @include bg-opts;
+}
+.k {
+  background: url(../icons/snare.png);
+  @include bg-opts;
+}
+.l {
+  background: url(../icons/floorTom.png);
+  @include bg-opts;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 5px 5px 0 $black;
+}
+
+a {
+  font-size: 2rem;
+  color: $text;
+  text-decoration: none;
+  &:hover {
+    color: $blue;
+  }
+}
+
+.selfLink {
+  font-family: 'Gochi Hand', cursive;
+}
+
+@media (max-width: 600px) {
+  body {
+    height: 100%;
+  }
+  .kit {
+    flex-direction: column;
+  }
+}
+
+/* Disco Animation */
+@keyframes color-rotate {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
