@@ -4,11 +4,72 @@
   font-family: "Roboto", sans-serif;
 }
 
+:root {
+  --bg: #d5d6db;
+  --text: #0f0f14;
+  --red: #f7768e;
+  --green: #485e30;
+  --blue: #34548a;
+  --black: #565a6e;
+}
+
+.dark {
+  --bg: #24283b;
+  --text: #c0caf5;
+  --red: #f7768e;
+  --green: #9ece6a;
+  --blue: #7aa2f7;
+  --black: #1a1b26;
+}
+.dark h1 {
+  text-shadow: 10px 10px 0 var(--black);
+}
+.dark .drum {
+  color: var(--red);
+  box-shadow: 0 5px 5px 0 var(--black);
+  text-shadow: none;
+}
+.dark footer {
+  text-shadow: 5px 5px 0 var(--black);
+}
+
+.control-opts {
+  width: 300px;
+}
+
+.dark-mode-toggle {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+.dark-mode-toggle:focus {
+  cursor: pointer;
+}
+
+.moon,
+.sun {
+  width: 40px;
+  position: absolute;
+  transform: translate(700%, -130%);
+  fill: var(--text);
+}
+
+.moon {
+  opacity: 0;
+}
+
+.dark .sun {
+  opacity: 0;
+}
+
+.dark .moon {
+  opacity: 1;
+}
+
 body {
   width: 100vw;
   height: 100vh;
-  background: #24283b;
-  color: #c0caf5;
+  background: var(--bg);
+  color: var(--text);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -17,11 +78,11 @@ body {
 
 h1 {
   font-size: 4rem;
-  text-shadow: 10px 10px 0 #1a1b26;
+  text-shadow: 5px 5px 5px var(--blue);
   font-family: "Gochi Hand", cursive;
 }
 h1:hover {
-  color: #7aa2f7;
+  color: var(--blue);
   animation: color-rotate 1s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
@@ -37,18 +98,18 @@ h1:hover {
 .drum {
   width: 150px;
   height: 150px;
-  border: 2px solid #1a1b26;
-  color: #f7768e;
   font-size: 3rem;
-  box-shadow: 0 5px 5px 0 #1a1b26;
+  border: 2px solid var(--black);
+  color: var(--red);
+  text-shadow: 5px 5px 5px var(--text);
 }
 .drum:hover {
   cursor: pointer;
-  color: #7aa2f7;
+  color: var(--blue);
 }
 
 .pressed {
-  box-shadow: 0 5px 5px 0 #9ece6a;
+  box-shadow: 0 5px 5px 0 var(--green);
   opacity: 0.5;
 }
 
@@ -94,16 +155,15 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-shadow: 5px 5px 0 #1a1b26;
 }
 
 a {
   font-size: 2rem;
-  color: #c0caf5;
+  color: var(--text);
   text-decoration: none;
 }
 a:hover {
-  color: #7aa2f7;
+  color: var(--blue);
 }
 
 .selfLink {
