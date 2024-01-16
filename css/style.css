@@ -54,37 +54,37 @@ h1:hover {
 
 /* Drum Buttons: */
 .s {
-  background: url(../icons/rideOrCrash.png);
+  background: url(../icons/rideOrCrash.webp);
   background-position: center;
   background-size: cover;
 }
 
 .d {
-  background: url(../icons/hihatOpen.png);
+  background: url(../icons/hihatOpen.webp);
   background-position: center;
   background-size: cover;
 }
 
 .f {
-  background: url(../icons/hihatClosed.png);
+  background: url(../icons/hihatClosed.webp);
   background-position: center;
   background-size: cover;
 }
 
 .j {
-  background: url(../icons/kick.png);
+  background: url(../icons/kick.webp);
   background-position: center;
   background-size: cover;
 }
 
 .k {
-  background: url(../icons/snare.png);
+  background: url(../icons/snare.webp);
   background-position: center;
   background-size: cover;
 }
 
 .l {
-  background: url(../icons/floorTom.png);
+  background: url(../icons/floorTom.webp);
   background-position: center;
   background-size: cover;
 }
