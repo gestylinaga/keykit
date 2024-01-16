@@ -1,105 +1,76 @@
+"use strict";
 console.log(`
  _____ _____ __ __ _                 _      _   by: Gesty   _____ _____ _____ 
 |  |  |   __|  |  | |_ ___ ___ ___ _| |   _| |___ _ _ _____|  |  |     |_   _|
 |    -|   __|_   _| . | . | .'|  _| . |  | . |  _| | |     |    -|-   -| | |  
 |__|__|_____| |_| |___|___|__,|_| |___|  |___|_| |___|_|_|_|__|__|_____| |_|  `);
 // Turn your keyboard into a mini drum kit!
-
-// Declare DOM elements - drum buttons:
+// Declare drum button elements
 const drums = document.querySelectorAll(".drum");
-
-// Handle Drum Clicks:
-const handleDrumClick = (event) => {
-  let innerHTML = event.target.innerHTML; // get title from html doc
-  animateButton(innerHTML.toLowerCase()); // animate drum button clicked
-  playSound(innerHTML.toLowerCase()); // play lower case choice of title sound
-}
-
-// Adding Event Listeners on drum buttons:
-for (let drum of drums) {
-  drum.addEventListener("click", handleDrumClick);
-}
-
-// Adding Event Listener on page for keypresses:
-document.addEventListener("keypress", 
-function (event) { // On keypress:
-  playSound(event.key); // play drum sound
-  animateButton(event.key); // animate drum button
-});
-
-// Play Sounds:
-function playSound(key) {
-
-  // Available key sounds:
-  switch (key) {
-    case "s":
-      let ride = new Audio("./sounds/ride.wav");
-      ride.volume = 0.5;
-      ride.play();
-      break;
-
-    case "d":
-      let hihatOpen = new Audio("./sounds/hihatOpen.wav");
-      hihatOpen.volume = 0.5;
-      hihatOpen.play();
-      break;
-
-    case "f":
-      let hihatClosed = new Audio("./sounds/hihatClosed.wav");
-      hihatClosed.volume = 0.5;
-      hihatClosed.play();
-      break;
-
-    case "j":
-      let kick = new Audio("./sounds/kick.wav");
-      kick.play();
-      break;
-
-    case "k":
-      let snare = new Audio("./sounds/snare.wav");
-      snare.play();
-      break;
-
-    case "l":
-      let floorTom = new Audio("./sounds/floorTom.wav");
-      floorTom.play();
-      break;
-
-    default: // If key pressed not an option:
-
-      let fakeSounds = [ // array of fake sound options
-        "Tsk!",
-        "Crash!",
-        "Bang!",
-        "Thud!"];
-
-      // Random choice of fake sound:
-      let soundChoice = fakeSounds[Math.floor(Math.random() * fakeSounds.length)];
-      console.log(soundChoice) // just for the console nerds
-  }
-}
-
-// Animate buttons:
+// Overall volume control
+let vol = 0.5;
+// Initializing audio files
+const ride = new Audio("./sounds/ride.wav");
+const hihatOpen = new Audio("./sounds/hihatOpen.wav");
+const hihatClosed = new Audio("./sounds/hihatClosed.wav");
+const kick = new Audio("./sounds/kick.wav");
+const snare = new Audio("./sounds/snare.wav");
+const floorTom = new Audio("./sounds/floorTom.wav");
+// Adjusting audio files volume
+ride.volume = vol;
+hihatOpen.volume = vol;
+hihatClosed.volume = vol;
+kick.volume = vol + 0.5;
+snare.volume = vol + 0.5;
+floorTom.volume = vol + 0.5;
+// Animate button pressed
 function animateButton(key) {
-
-  // Declare key element class from DOM:
-  let activeButton = document.querySelector("." + key);
-
-  // Valid keys in the drumkit:
-  const validKeys = ['s', 'd', 'f', 'j', 'k', 'l'];
-
-  if (validKeys.includes(key)) { // If key is valid:
-    activeButton.classList.add("pressed"); // Add class 'pressed':
-    // Removes class after a delay:
-    setTimeout(function() {activeButton.classList.remove("pressed")}), 1000;
-
-  } else { // If key is not valid:
-    console.log(`${key} not in the kit`); // log key pressed
-  }
+    let activeButton = document.querySelector("." + key);
+    const validKeys = ["s", "d", "f", "j", "k", "l"];
+    if (validKeys.includes(key)) {
+        activeButton.classList.toggle("pressed");
+        setTimeout(function () { activeButton.classList.toggle("pressed"); }), 1000;
+    }
+    else {
+        console.log(`${key} not in the kit`);
+    }
 }
-
-/* TODO:
-  - fix animations when multiple keys hit/hit fast
-*/
-
-// KeyKit by Gesty Linaga
+function playSound(key) {
+    switch (key) {
+        case "s":
+            ride.play();
+            break;
+        case "d":
+            hihatOpen.play();
+            break;
+        case "f":
+            hihatClosed.play();
+            break;
+        case "j":
+            kick.play();
+            break;
+        case "k":
+            snare.play();
+            break;
+        case "l":
+            floorTom.play();
+            break;
+        default:
+            console.log("Key not in kit");
+    }
+}
+// Handle Drum Clicks
+function handleDrumClick(event) {
+    let innerHTML = event.target.innerHTML; // get key from html doc
+    animateButton(innerHTML.toLowerCase()); // animate button clicked
+    playSound(innerHTML.toLowerCase()); // play sound
+}
+// Adding event listeners on drum buttons
+for (let drum of drums) {
+    drum.addEventListener("click", handleDrumClick);
+}
+// Adding event listeners on page keypresses
+document.addEventListener("keypress", function (event) {
+    animateButton(event.key);
+    playSound(event.key);
+});
