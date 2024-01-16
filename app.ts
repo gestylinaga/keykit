@@ -6,88 +6,84 @@ console.log(`
 // Turn your keyboard into a mini drum kit!
 
 // Declare drum button elements
-const drums: object = document.querySelectorAll(".drum");
+const drums = document.querySelectorAll(".drum");
 
 // Overall volume control
 let vol: number = 0.5;
 
-// Initializing audio files
-const ride: any = new Audio("./sounds/ride.wav");
-const hihatOpen: any = new Audio("./sounds/hihatOpen.wav");
-const hihatClosed: any = new Audio("./sounds/hihatClosed.wav");
-const kick: any = new Audio("./sounds/kick.wav");
-const snare: any = new Audio("./sounds/snare.wav");
-const floorTom: any = new Audio("./sounds/floorTom.wav");
-
-// Adjusting audio files volume
-ride.volume = vol;
-hihatOpen.volume = vol;
-hihatClosed.volume = vol;
-kick.volume = vol + 0.5;
-snare.volume = vol + 0.5;
-floorTom.volume = vol + 0.5;
-
 // Animate button pressed
 function animateButton(key: string): void {
- let activeButton: any = document.querySelector("." + key);
- const validKeys: string[] = ["s", "d", "f", "j", "k", "l"];
+  let activeButton: any = document.querySelector("." + key);
+  const validKeys: string[] = ["s", "d", "f", "j", "k", "l"];
 
  if (validKeys.includes(key)) {
-  activeButton.classList.toggle("pressed");
-  setTimeout(function() {activeButton.classList.toggle("pressed")}), 1000;
+   activeButton.classList.toggle("pressed");
+   setTimeout(function() {activeButton.classList.toggle("pressed")}), 1000;
  } else {
-  console.log(`${key} not in the kit`);
+   console.log(`${key} not in the kit`);
  }
 }
 
+// Play sound on key press
 function playSound(key: string): void {
+  switch (key) {
+    case "s":
+      const ride: HTMLAudioElement = new Audio("./sounds/ride.wav");
+      ride.volume = vol;
+      ride.play();
+      break;
 
- switch (key) {
-  case "s":
-   ride.play();
-   break;
+    case "d":
+      const hihatOpen: HTMLAudioElement = new Audio("./sounds/hihatOpen.wav");
+      hihatOpen.volume = vol;
+      hihatOpen.play();
+      break;
 
-  case "d":
-   hihatOpen.play();
-   break;
+    case "f":
+      const hihatClosed: HTMLAudioElement = new Audio("./sounds/hihatClosed.wav");
+      hihatClosed.volume = vol;
+      hihatClosed.play();
+      break;
 
-  case "f":
-   hihatClosed.play();
-   break;
+    case "j":
+      const kick: HTMLAudioElement = new Audio("./sounds/kick.wav");
+      kick.volume = vol + 0.5;
+      kick.play();
+      break;
 
-  case "j":
-   kick.play();
-   break;
+    case "k":
+      const snare: HTMLAudioElement = new Audio("./sounds/snare.wav");
+      snare.volume = vol + 0.5;
+      snare.play();
+      break;
 
-   case "k":
-    snare.play();
-    break;
-
-   case "l":
-    floorTom.play();
-    break;
+    case "l":
+      const floorTom: HTMLAudioElement = new Audio("./sounds/floorTom.wav");
+      floorTom.volume = vol + 0.5;
+      floorTom.play();
+      break;
 
    default:
-    console.log("Key not in kit");
+     console.log(`${key}`);
  }
 }
 
 // Handle Drum Clicks
 function handleDrumClick(event: any) {
- let innerHTML = event.target.innerHTML; // get key from html doc
- animateButton(innerHTML.toLowerCase()); // animate button clicked
- playSound(innerHTML.toLowerCase());     // play sound
+  let innerHTML = event.target.innerHTML; // get key from html doc
+  playSound(innerHTML.toLowerCase());     // play sound
+  animateButton(innerHTML.toLowerCase()); // animate button clicked
 }
 
 // Adding event listeners on drum buttons
 for (let drum of drums) {
- drum.addEventListener("click", handleDrumClick);
+  drum.addEventListener("click", handleDrumClick);
 }
 
 // Adding event listeners on page keypresses
 document.addEventListener("keypress", 
- function(event) {
-  animateButton(event.key);
-  playSound(event.key);
+  function(event) {
+    playSound(event.key);
+    animateButton(event.key);
 })
 

@@ -9,20 +9,6 @@ console.log(`
 const drums = document.querySelectorAll(".drum");
 // Overall volume control
 let vol = 0.5;
-// Initializing audio files
-const ride = new Audio("./sounds/ride.wav");
-const hihatOpen = new Audio("./sounds/hihatOpen.wav");
-const hihatClosed = new Audio("./sounds/hihatClosed.wav");
-const kick = new Audio("./sounds/kick.wav");
-const snare = new Audio("./sounds/snare.wav");
-const floorTom = new Audio("./sounds/floorTom.wav");
-// Adjusting audio files volume
-ride.volume = vol;
-hihatOpen.volume = vol;
-hihatClosed.volume = vol;
-kick.volume = vol + 0.5;
-snare.volume = vol + 0.5;
-floorTom.volume = vol + 0.5;
 // Animate button pressed
 function animateButton(key) {
     let activeButton = document.querySelector("." + key);
@@ -35,35 +21,48 @@ function animateButton(key) {
         console.log(`${key} not in the kit`);
     }
 }
+// Play sound on key press
 function playSound(key) {
     switch (key) {
         case "s":
+            const ride = new Audio("./sounds/ride.wav");
+            ride.volume = vol;
             ride.play();
             break;
         case "d":
+            const hihatOpen = new Audio("./sounds/hihatOpen.wav");
+            hihatOpen.volume = vol;
             hihatOpen.play();
             break;
         case "f":
+            const hihatClosed = new Audio("./sounds/hihatClosed.wav");
+            hihatClosed.volume = vol;
             hihatClosed.play();
             break;
         case "j":
+            const kick = new Audio("./sounds/kick.wav");
+            kick.volume = vol + 0.5;
             kick.play();
             break;
         case "k":
+            const snare = new Audio("./sounds/snare.wav");
+            snare.volume = vol + 0.5;
             snare.play();
             break;
         case "l":
+            const floorTom = new Audio("./sounds/floorTom.wav");
+            floorTom.volume = vol + 0.5;
             floorTom.play();
             break;
         default:
-            console.log("Key not in kit");
+            console.log(`${key}`);
     }
 }
 // Handle Drum Clicks
 function handleDrumClick(event) {
     let innerHTML = event.target.innerHTML; // get key from html doc
-    animateButton(innerHTML.toLowerCase()); // animate button clicked
     playSound(innerHTML.toLowerCase()); // play sound
+    animateButton(innerHTML.toLowerCase()); // animate button clicked
 }
 // Adding event listeners on drum buttons
 for (let drum of drums) {
@@ -71,6 +70,6 @@ for (let drum of drums) {
 }
 // Adding event listeners on page keypresses
 document.addEventListener("keypress", function (event) {
-    animateButton(event.key);
     playSound(event.key);
+    animateButton(event.key);
 });
