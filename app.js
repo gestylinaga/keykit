@@ -25,32 +25,32 @@ function animateButton(key) {
 function playSound(key) {
     switch (key) {
         case "s":
-            const ride = new Audio("./sounds/ride.wav");
+            const ride = new Audio("./sounds/ride.mp3");
             ride.volume = vol;
             ride.play();
             break;
         case "d":
-            const hihatOpen = new Audio("./sounds/hihatOpen.wav");
+            const hihatOpen = new Audio("./sounds/hihatOpen.mp3");
             hihatOpen.volume = vol;
             hihatOpen.play();
             break;
         case "f":
-            const hihatClosed = new Audio("./sounds/hihatClosed.wav");
+            const hihatClosed = new Audio("./sounds/hihatClosed.mp3");
             hihatClosed.volume = vol;
             hihatClosed.play();
             break;
         case "j":
-            const kick = new Audio("./sounds/kick.wav");
+            const kick = new Audio("./sounds/kick.mp3");
             kick.volume = vol + 0.5;
             kick.play();
             break;
         case "k":
-            const snare = new Audio("./sounds/snare.wav");
+            const snare = new Audio("./sounds/snare.mp3");
             snare.volume = vol + 0.5;
             snare.play();
             break;
         case "l":
-            const floorTom = new Audio("./sounds/floorTom.wav");
+            const floorTom = new Audio("./sounds/floorTom.mp3");
             floorTom.volume = vol + 0.5;
             floorTom.play();
             break;

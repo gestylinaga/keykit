@@ -28,37 +28,37 @@ function animateButton(key: string): void {
 function playSound(key: string): void {
   switch (key) {
     case "s":
-      const ride: HTMLAudioElement = new Audio("./sounds/ride.wav");
+      const ride: HTMLAudioElement = new Audio("./sounds/ride.mp3");
       ride.volume = vol;
       ride.play();
       break;
 
     case "d":
-      const hihatOpen: HTMLAudioElement = new Audio("./sounds/hihatOpen.wav");
+      const hihatOpen: HTMLAudioElement = new Audio("./sounds/hihatOpen.mp3");
       hihatOpen.volume = vol;
       hihatOpen.play();
       break;
 
     case "f":
-      const hihatClosed: HTMLAudioElement = new Audio("./sounds/hihatClosed.wav");
+      const hihatClosed: HTMLAudioElement = new Audio("./sounds/hihatClosed.mp3");
       hihatClosed.volume = vol;
       hihatClosed.play();
       break;
 
     case "j":
-      const kick: HTMLAudioElement = new Audio("./sounds/kick.wav");
+      const kick: HTMLAudioElement = new Audio("./sounds/kick.mp3");
       kick.volume = vol + 0.5;
       kick.play();
       break;
 
     case "k":
-      const snare: HTMLAudioElement = new Audio("./sounds/snare.wav");
+      const snare: HTMLAudioElement = new Audio("./sounds/snare.mp3");
       snare.volume = vol + 0.5;
       snare.play();
       break;
 
     case "l":
-      const floorTom: HTMLAudioElement = new Audio("./sounds/floorTom.wav");
+      const floorTom: HTMLAudioElement = new Audio("./sounds/floorTom.mp3");
       floorTom.volume = vol + 0.5;
       floorTom.play();
       break;
