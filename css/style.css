@@ -165,16 +165,16 @@ label[for=dark-mode-toggle] {
   fill: var(--text);
 }
 
-.moon {
+.sun {
   opacity: 0;
 }
 
 .dark .sun {
-  opacity: 0;
+  opacity: 1;
 }
 
 .dark .moon {
-  opacity: 1;
+  opacity: 0;
 }
 
 a {
