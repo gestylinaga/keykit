@@ -47,19 +47,19 @@ function playSound(key: string): void {
 
     case "j":
       const kick: HTMLAudioElement = new Audio("./sounds/kick.mp3");
-      kick.volume = vol + 0.5;
+      kick.volume = vol;
       kick.play();
       break;
 
     case "k":
       const snare: HTMLAudioElement = new Audio("./sounds/snare.mp3");
-      snare.volume = vol + 0.5;
+      snare.volume = vol;
       snare.play();
       break;
 
     case "l":
       const floorTom: HTMLAudioElement = new Audio("./sounds/floorTom.mp3");
-      floorTom.volume = vol + 0.5;
+      floorTom.volume = vol;
       floorTom.play();
       break;
 
@@ -85,6 +85,13 @@ document.addEventListener("keypress",
   function(event) {
     playSound(event.key);
     animateButton(event.key);
+})
+
+// Volume control
+const volumeSlider: any = document.getElementById("volume-slide");
+volumeSlider.addEventListener("change", () => {
+  vol = parseFloat(volumeSlider.value)
+  console.log(vol)
 })
 
 // Dark mode toggle

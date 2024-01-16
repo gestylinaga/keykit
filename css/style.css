@@ -33,38 +33,6 @@
   text-shadow: 5px 5px 0 var(--black);
 }
 
-.control-opts {
-  width: 300px;
-}
-
-.dark-mode-toggle {
-  border: none;
-  background-color: rgba(0, 0, 0, 0);
-}
-.dark-mode-toggle:focus {
-  cursor: pointer;
-}
-
-.moon,
-.sun {
-  width: 40px;
-  position: absolute;
-  transform: translate(700%, -130%);
-  fill: var(--text);
-}
-
-.moon {
-  opacity: 0;
-}
-
-.dark .sun {
-  opacity: 0;
-}
-
-.dark .moon {
-  opacity: 1;
-}
-
 body {
   width: 100vw;
   height: 100vh;
@@ -155,6 +123,58 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.control-opts {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+
+.volume-icon {
+  width: 40px;
+  fill: var(--text);
+}
+
+#volume-slide {
+  width: 80%;
+}
+
+label[for=dark-mode-toggle] {
+  padding-block: 2rem;
+  padding-left: 10rem;
+  width: 100%;
+}
+
+.dark-mode-toggle {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+.dark-mode-toggle:focus {
+  cursor: pointer;
+}
+
+.moon,
+.sun {
+  width: 40px;
+  position: absolute;
+  transform: translate(180%, -160%);
+  fill: var(--text);
+}
+
+.moon {
+  opacity: 0;
+}
+
+.dark .sun {
+  opacity: 0;
+}
+
+.dark .moon {
+  opacity: 1;
 }
 
 a {

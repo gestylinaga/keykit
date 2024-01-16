@@ -41,17 +41,17 @@ function playSound(key) {
             break;
         case "j":
             const kick = new Audio("./sounds/kick.mp3");
-            kick.volume = vol + 0.5;
+            kick.volume = vol;
             kick.play();
             break;
         case "k":
             const snare = new Audio("./sounds/snare.mp3");
-            snare.volume = vol + 0.5;
+            snare.volume = vol;
             snare.play();
             break;
         case "l":
             const floorTom = new Audio("./sounds/floorTom.mp3");
-            floorTom.volume = vol + 0.5;
+            floorTom.volume = vol;
             floorTom.play();
             break;
         default:
@@ -72,6 +72,12 @@ for (let drum of drums) {
 document.addEventListener("keypress", function (event) {
     playSound(event.key);
     animateButton(event.key);
+});
+// Volume control
+const volumeSlider = document.getElementById("volume-slide");
+volumeSlider.addEventListener("change", () => {
+    vol = parseFloat(volumeSlider.value);
+    console.log(vol);
 });
 // Dark mode toggle
 let darkMode = localStorage.getItem("darkMode");
