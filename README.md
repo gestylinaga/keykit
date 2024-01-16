@@ -1,10 +1,9 @@
-# KeyKit
+# 🥁 KeyKit
 A **Key**board drum**Kit** in your browser.
 
-[Link to Live Site](https://gestylinaga.github.io/keykit/)
+[Link to live site](https://gesty.dev/keykit)
 
 > Turn your keyboard into a mini drum kit!
-
 
 ## Usage
 |Drum Sound|...|Keyboard Shortcut|
@@ -21,9 +20,11 @@ or:
 Click the Buttons.
 
 ## Preview
-![Screenshot](./screenshot.png)
+![Light Mode Screenshot](./screenshotLightMode.webp)
+<p align="center"><strong>Light Mode</strong></p>
 
-[Link to Live Site](https://gestylinaga.github.io/keykit/)
+![Dark Mode Screenshot](./screenshotDarkMode.webp)
+<p align="center"><strong>Dark Mode</strong></p>
 
 ---
 
