@@ -48,6 +48,7 @@ h1 {
   font-size: 4rem;
   text-shadow: 5px 5px 5px var(--blue);
   font-family: "Gochi Hand", cursive;
+  display: flex;
 }
 h1:hover {
   color: var(--blue);
@@ -55,6 +56,14 @@ h1:hover {
   animation-iteration-count: infinite;
   animation-direction: alternate;
   cursor: default;
+}
+h1:hover > .full-text {
+  display: block;
+}
+
+.full-text {
+  font-family: "Gochi Hand", cursive;
+  display: none;
 }
 
 .kit {

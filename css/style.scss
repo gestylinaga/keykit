@@ -54,6 +54,8 @@ h1 {
   font-size: 4rem;
   text-shadow: 5px 5px 5px var(--blue);
   font-family: 'Gochi Hand', cursive;
+  display: flex;
+
   &:hover {
     color: var(--blue);
     animation: color-rotate 1s;
@@ -61,6 +63,15 @@ h1 {
     animation-direction: alternate;
     cursor: default;
   }
+
+  &:hover > .full-text {
+    display: block;
+  }
+}
+
+.full-text {
+  font-family: 'Gochi Hand', cursive;
+  display: none;
 }
 
 // Button Container Div
